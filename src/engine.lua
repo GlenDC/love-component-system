@@ -45,7 +45,7 @@ function ENGINE.CalculateScreenScaleValues( working_res )
         ENGINE.ScreenAspectRatio = working_res[ 1 ] / working_res[ 2 ]
         width = height * ENGINE.ScreenAspectRatio
 
-        Engine.ViewportOffset[ 1 ] = ( screen_res[ 1 ] - width ) / 2
+        ENGINE.ViewportOffset[ 1 ] = ( screen_res[ 1 ] - width ) / 2
     else
         width = screen_res[ 1 ]
         ENGINE.ScreenAspectRatio = working_res[ 2 ] / working_res[ 1 ]
