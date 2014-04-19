@@ -1,4 +1,5 @@
 require "lcs.src.entity"
+require "lcs.src.math"
 
 require 'lcs.src.component_sprite'
 require 'lcs.src.component_quad'
@@ -23,11 +24,45 @@ require 'lcs.src.sprite_sheet'
 
 ENGINE = {
     RenderWorlds = {},
-    Cameras = {}
+    Cameras = {},
+    ViewportDimensions = { 0, 0 },
+    ViewportOffset = { 0, 0 },
+    ScreenAspectRatio = 0.0,
+    ScreenScaleRatio = 1.0
 }
 
-function ENGINE.Initialize(arg)
+function ENGINE.CalculateScreenScaleValues( working_res )
+     local screen_res = {
+        love.graphics.getWidth(),
+        love.graphics.getHeight()
+        }
+
+    local width = screen_res[ 1 ] / working_res[ 1 ]
+    local height = screen_res[ 2 ] / working_res[ 2 ]
+
+    if width > height then
+        height = screen_res[ 2 ]
+        ENGINE.ScreenAspectRatio = working_res[ 1 ] / working_res[ 2 ]
+        width = height * ENGINE.ScreenAspectRatio
+
+        Engine.ViewportOffset[ 1 ] = ( screen_res[ 1 ] - width ) / 2
+    else
+        width = screen_res[ 1 ]
+        ENGINE.ScreenAspectRatio = working_res[ 2 ] / working_res[ 1 ]
+        height = width * ENGINE.ScreenAspectRatio
+
+        ENGINE.ViewportOffset[ 2 ] = ( screen_res[ 2 ] - height ) / 2
+    end
+
+    ENGINE.ViewportDimensions[ 1 ] = width
+    ENGINE.ViewportDimensions[ 2 ] = height
+
+    ENGINE.ScreenScaleRatio = ENGINE.ViewportDimensions[ 1 ] / working_res[ 1 ]
+end
+
+function ENGINE.Initialize(arg, working_res)
     if arg[#arg] == "-debug" then require("mobdebug").start() end
+    ENGINE.CalculateScreenScaleValues( working_res )
 end
 
 function ENGINE.Update(dt)

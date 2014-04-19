@@ -24,8 +24,9 @@ COMPONENT_SPRITE = class(function(o,parameters,entity)
 
     o.ScaleFactorX = o.Extent[1] / w
     o.ScaleFactorY = o.Extent[2] / h
-    o.OffsetX = w * 0.5
-    o.OffsetY = h * 0.5
+    o.OffsetX = ( w * 0.5 )
+    o.OffsetY = ( h * 0.5 )
+
 
     o.World = parameters.World or 1
 
@@ -49,24 +50,24 @@ function COMPONENT_SPRITE:Render()
         love.graphics.draw(
             self.Texture,
             self.Quad,
-            p[1],
-            p[2],
+            ENGINE.ViewportOffset[ 1 ] + ( p[ 1 ] * ENGINE.ScreenScaleRatio ),
+            ENGINE.ViewportOffset[ 2 ] + ( p[ 2 ] * ENGINE.ScreenScaleRatio ),
             self.Entity.Orientation,
-            self.ScaleFactorX,
-            self.ScaleFactorY,
-            self.OffsetX,
-            self.OffsetY
+            self.ScaleFactorX * ENGINE.ScreenScaleRatio,
+            self.ScaleFactorY * ENGINE.ScreenScaleRatio,
+            ( self.ScaleFactorX * ENGINE.ScreenScaleRatio ) * 0.5, -- :TODO: use offset in a 0:1 range
+            ( self.ScaleFactorY * ENGINE.ScreenScaleRatio ) * 0.5 -- :TODO: use offset in a 0:1 range
             )
     else
         love.graphics.draw(
             self.Texture,
-            p[1],
-            p[2],
+            ENGINE.ViewportOffset[ 1 ] + ( p[ 1 ] * ENGINE.ScreenScaleRatio ),
+            ENGINE.ViewportOffset[ 2 ] + ( p[ 2 ] * ENGINE.ScreenScaleRatio ),
             self.Entity.Orientation,
-            self.ScaleFactorX,
-            self.ScaleFactorY,
-            self.OffsetX,
-            self.OffsetY
+            self.ScaleFactorX * ENGINE.ScreenScaleRatio,
+            self.ScaleFactorY * ENGINE.ScreenScaleRatio,
+            ( self.ScaleFactorX * ENGINE.ScreenScaleRatio ) * 0.5, -- :TODO: use offset in a 0:1 range
+            ( self.ScaleFactorY * ENGINE.ScreenScaleRatio ) * 0.5 -- :TODO: use offset in a 0:1 range
             )
     end
 end
