@@ -1,4 +1,4 @@
-require 'lcs.class'
+require 'lcs.src.class'
 
 COMPONENT_TEXT = class(function(o,parameters,entity)
     o.Layer = parameters.Layer or 1

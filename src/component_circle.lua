@@ -1,4 +1,4 @@
-require 'lcs.class'
+require 'lcs.src.class'
 
 COMPONENT_CIRCLE = class(function(o,parameters,entity)
     o.Radius = parameters.Radius

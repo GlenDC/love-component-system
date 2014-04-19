@@ -1,4 +1,4 @@
-require 'lcs.class'
+require 'lcs.src.class'
 
 COMPONENT_BOUNDING_WORLD = class(function(o,parameters,entity)
     o.Boundings = {}

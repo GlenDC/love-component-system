@@ -1,4 +1,4 @@
-require 'lcs.class'
+require 'lcs.src.class'
 
 COMPONENT_SPRITE_BATCH = class(function(o,parameters,entity)
     o.SpriteSheet = parameters.SpriteSheet

@@ -1,25 +1,25 @@
-require "lcs.entity"
+require "lcs.src.entity"
 
-require 'lcs.component_sprite'
-require 'lcs.component_quad'
-require 'lcs.component_circle'
-require 'lcs.component_animated_sprite'
-require 'lcs.component_physic'
-require 'lcs.component_physic_world'
-require 'lcs.component_camera'
-require 'lcs.component_text'
-require 'lcs.component_particle'
-require 'lcs.component_sprite_batch'
-require 'lcs.component_static_sprite'
-require 'lcs.component_bounding'
-require 'lcs.component_bounding_world'
-require 'lcs.component_lifetime'
+require 'lcs.src.component_sprite'
+require 'lcs.src.component_quad'
+require 'lcs.src.component_circle'
+require 'lcs.src.component_animated_sprite'
+require 'lcs.src.component_physic'
+require 'lcs.src.component_physic_world'
+require 'lcs.src.component_camera'
+require 'lcs.src.component_text'
+require 'lcs.src.component_particle'
+require 'lcs.src.component_sprite_batch'
+require 'lcs.src.component_static_sprite'
+require 'lcs.src.component_bounding'
+require 'lcs.src.component_bounding_world'
+require 'lcs.src.component_lifetime'
 
-require 'lcs.state_machine'
+require 'lcs.src.state_machine'
 
-require 'lcs.texture'
-require 'lcs.animation'
-require 'lcs.sprite_sheet'
+require 'lcs.src.texture'
+require 'lcs.src.animation'
+require 'lcs.src.sprite_sheet'
 
 ENGINE = {
     RenderWorlds = {},

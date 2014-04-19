@@ -1,4 +1,4 @@
-require 'lcs.class'
+require 'lcs.src.class'
 
 COMPONENT_STATIC_SPRITE = class(function(o,parameters,entity)
     o.Quad = parameters.Quad

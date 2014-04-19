@@ -1,5 +1,5 @@
-require 'lcs.class'
-require 'lcs.animation'
+require 'lcs.src.class'
+require 'lcs.src.animation'
 
 COMPONENT_ANIMATED_SPRITE = class(function(o,parameters,entity)
     o.Layer = parameters.Layer or 1

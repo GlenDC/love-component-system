@@ -1,4 +1,4 @@
-require 'lcs.class'
+require 'lcs.src.class'
 
 COMPONENT_BOUNDING = class(function(o,parameters,entity)
     o.Entity = entity

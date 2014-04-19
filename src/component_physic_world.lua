@@ -1,4 +1,4 @@
-require 'lcs.class'
+require 'lcs.src.class'
 
 local FIXED_RATE = 0.01
 
