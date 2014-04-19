@@ -74,6 +74,16 @@ function ENGINE.Render()
 
     ENTITY.PreRenderAll()
 
+    love.graphics.setColor( { 255, 0, 0, 255 } ) -- :TODO: use user defined viewport Color
+
+    love.graphics.rectangle(
+        "fill",
+        ENGINE.ViewportOffset[ 1 ],
+        ENGINE.ViewportOffset[ 2 ],
+        ENGINE.ViewportDimensions[ 1 ],
+        ENGINE.ViewportDimensions[ 2 ]
+        )
+
     for k,w in pairs(ENGINE.RenderWorlds) do
         if ENGINE.Cameras[k] then
             ENGINE.Cameras[k]:Apply()
