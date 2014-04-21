@@ -22,6 +22,10 @@ require 'lcs.src.texture'
 require 'lcs.src.animation'
 require 'lcs.src.sprite_sheet'
 
+-- :TODO:
+--      + Implement Log-Console (Debug purposes)
+--      + Implement FPS Counter (Debug purposes)
+
 ENGINE = {
     RenderWorlds = {},
     Cameras = {},
