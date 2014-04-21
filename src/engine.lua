@@ -74,7 +74,7 @@ function ENGINE.Render()
 
     ENTITY.PreRenderAll()
 
-    love.graphics.setColor( { 255, 0, 0, 255 } ) -- :TODO: use user defined viewport Color
+    love.graphics.setColor( { 255, 255, 0, 255 } ) -- :TODO: use user defined viewport Color
 
     love.graphics.rectangle(
         "fill",
